@@ -1,4 +1,5 @@
 class Screen < Formula
+  desc "Terminal multiplexer with VT100/ANSI terminal emulation"
   homepage "https://www.gnu.org/software/screen"
 
   stable do
@@ -51,5 +52,9 @@ class Screen < Formula
                           "--enable-colors256"
     system "make"
     system "make", "install"
+  end
+
+  test do
+    shell_output("#{bin}/screen -h", 1)
   end
 end
