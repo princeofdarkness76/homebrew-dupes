@@ -1,5 +1,5 @@
 class Nano < Formula
-  desc "A free (GNU) replacement for the Pico text editor"
+  desc "Free (GNU) replacement for the Pico text editor"
   homepage "http://www.nano-editor.org/"
   url "http://www.nano-editor.org/dist/v2.5/nano-2.5.0.tar.gz"
   sha256 "ff323e6fef74caf0a924304841c07ac65ec30db99dc5c1f8272b4c536a5c89ee"

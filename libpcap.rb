@@ -3,17 +3,17 @@ class Libpcap < Formula
   homepage "http://www.tcpdump.org/"
   url "http://www.tcpdump.org/release/libpcap-1.7.4.tar.gz"
   sha256 "7ad3112187e88328b85e46dce7a9b949632af18ee74d97ffc3f2b41fe7f448b0"
+  head "git://bpf.tcpdump.org/libpcap"
 
   bottle do
     cellar :any
-    sha256 "3126a1acd16a59a320d61d0fc050d05a9d0c39896ac63552be73af76cf0a1546" => :yosemite
-    sha256 "c3fa203c6bcc117e55cf611b1ce228fad2d722d26ebff34428db0f293dc6e840" => :mavericks
-    sha256 "8c2c6c198d3526df70df0be64fc9c58df44334fde1ac75dd081068027308b951" => :mountain_lion
+    revision 1
+    sha256 "a4bcec4f3744f8d79246f8bf08f050c5ead1282bb84cbfee8781adda8be9d067" => :el_capitan
+    sha256 "6d61bd2683252f7791b581e8ca0743663c70f5ccd7b6900b330b6ae51b09fe56" => :yosemite
+    sha256 "01d4bcd4a4bebcd0cf5131a6bf49aba5efc19c7de5ffacda684f5655ea0126b4" => :mavericks
   end
 
   keg_only :provided_by_osx
-
-  head "git://bpf.tcpdump.org/libpcap"
 
   def install
     system "./configure", "--prefix=#{prefix}",

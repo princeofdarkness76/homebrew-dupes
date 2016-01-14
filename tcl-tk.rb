@@ -1,5 +1,6 @@
 class TclTk < Formula
-  homepage "http://www.tcl.tk/"
+  desc "Tool Command Language"
+  homepage "https://www.tcl.tk/"
   url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.4/tcl8.6.4-src.tar.gz"
   version "8.6.4"
   sha256 "9e6ed94c981c1d0c5f5fefb8112d06c6bf4d050a7327e95e71d417c416519c8d"
@@ -69,7 +70,7 @@ class TclTk < Formula
         cd "unix" do
           system "./configure", *args
           system "make", "TK_LIBRARY=#{lib}"
-          # system "make test"  # for maintainers
+          # system "make", "test"  # for maintainers
           system "make", "install"
           system "make", "install-private-headers"
           ln_s bin/"wish8.6", bin/"wish"
@@ -87,8 +88,7 @@ class TclTk < Formula
   end
 
   test do
-    output = `echo "puts honk" | tclsh`
-    assert_equal "honk", output.chomp
+    assert_equal "honk", pipe_output("#{bin}/tclsh", "puts honk\n").chomp
   end
 end
 
